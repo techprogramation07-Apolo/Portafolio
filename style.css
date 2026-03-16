@@ -31,6 +31,7 @@ body {
   background: rgba(0, 0, 0, 0.55);
   border-bottom: 1px solid rgba(75, 219, 214, 0.14);
   box-shadow: 0 8px 22px rgba(0, 0, 0, 0.55);
+
   backdrop-filter: blur(18px);
   position: sticky;
   top: 0;
@@ -60,6 +61,14 @@ body {
   background: linear-gradient(90deg, rgba(62, 246, 211, 0.7), rgba(70, 176, 255, 0.6));
   opacity: 0.8;
   pointer-events: none;
+}
+.navbar-brand img {
+  min-height: 70px;
+  max-height: 80px;
+}
+
+.close-white {
+  filter: invert(1) brightness(1.2);
 }
 
 .navbar-brand img {
@@ -255,7 +264,7 @@ section h2::after {
   letter-spacing: 0.18em;
   font-weight: 900;
   color: #ffffff;
-  -webkit-text-stroke: 0.4px rgba(255, 255, 255, 0.45);
+  -webkit-text-stroke: 2px rgba(75, 219, 214, 0.28);
   text-shadow: 0 0 18px rgba(62, 246, 211, 0.7), 0 0 30px rgba(70, 176, 255, 0.4);
   animation: glow 2.2s ease-in-out infinite;
   max-width: 820px;
@@ -337,6 +346,20 @@ section h2::after {
   border-color: rgba(62, 246, 211, 0.4);
 }
 
+.projecto-card img {
+  width: 100%;
+  border-radius: var(--radius);
+  margin-bottom: 1.25rem;
+  object-fit: cover;
+  border: 2px solid rgba(75, 219, 214, 0.18);
+  filter: grayscale(1);
+}
+
+.projecto-card:hover img {
+  filter: grayscale(0);
+  border-color: rgba(62, 246, 211, 0.28);
+}
+
 .projecto-card h3 {
   margin-top: 0;
   color: var(--primary);
@@ -357,6 +380,8 @@ section h2::after {
   text-decoration: underline;
 }
 
+
+
 /* Contact */
 #contacto {
   padding: 3rem 1.5rem;
@@ -374,7 +399,8 @@ section h2::after {
 #contacto input,
 #contacto textarea {
   width: 100%;
-  padding: 0.85rem 1rem;
+  padding: 0.85rem 1.25rem;
+  margin-top: 8px;
   border-radius: 14px;
   border: 1px solid rgba(75, 219, 214, 0.18);
   background: rgba(10, 16, 28, 0.85);
