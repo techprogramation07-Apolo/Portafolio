@@ -32,11 +32,11 @@ if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
 // CONFIGURACIÓN SMTP (GMAIL)
 // --------------------------------------------------
 $smtpHost = 'smtp.gmail.com';
-$smtpPort = 587;
-$smtpUser = 'techprogramation.07@gmail.com';
-$smtpPass = 'ygii dfyf sdbo kapg'; // contraseña de aplicación
-$fromEmail = 'techprogramation.07@gmail.com';
-$fromName = 'TechProgramation';
+$smtpPort = 777; // puerto de la aplicacion
+$smtpUser = 'techprogramation.07@gmail.com'; // correo del usuario desde donde se envia el correo
+$smtpPass = 'hsku jdshu jskdu jksu'; // contraseña de aplicación
+$fromEmail = 'techprogramation.07@gmail.com'; // correo del usuario desde donde se envia el correo
+$fromName = 'Tech';
 
 // CORREO QUE RECIBE LOS MENSAJES
 $toEmail = 'techprogramation.07@gmail.com';
