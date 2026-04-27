@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<?php ?>
 <html lang="en">
 
 <head>
@@ -56,17 +56,19 @@
             </div>
           </div>
 
-          <div class="hero__terminal">
-            <div class="terminal__header">
-              <span></span><span></span><span></span>
-            </div>
-            <pre class="terminal__body" aria-label="Terminal output">
+          <div class="terminal__hero">
+            <div class="hero__terminal">
+              <div class="terminal__header">
+                <span></span><span></span><span></span>
+              </div>
+              <pre class="terminal__body" aria-label="Terminal output">
 &gt; executing sequence...
 &gt; loading dependencies: [ok]
 &gt; compiling source assets: [ok]
 &gt; initializing visual matrix: [ok]
 
 &gt; system ready_</pre>
+            </div>
           </div>
         </div>
       </section>
@@ -112,29 +114,35 @@
       <section id="projectos">
         <h2>Proyectos</h2>
         <div class="projecto-card">
-          <img src="" alt="">
+          <a href="#"><img src="" alt=""></a>
           <h3>Proyecto 1: Hub-Infraestructura tecnologica (colaboracion)</h3>
           <p>plataforma web de alto rendimiento diseñada específicamente para empresas del sector de telecomunicaciones,
             conectividad y energías renovables.</p>
+          <p><span>Html</span><span>JavaScript</span><span>PHP</span><span>Scss/Sass</span></p>
           <a href="">upsi error en base de datos</a>
         </div>
         <div class="projecto-card">
-          <img src="assets/img/Captura de pantalla 2026-03-16 214830.png" alt="Proyecto 2">
-          <h3>Proyecto 2: Mariachis CaminoReal (colaboracion-Repertorio)</h3>
-          <p>web para la promoción y organización de eventos musicales de mariachis, Elaboracion del repertorio.</p>
-          <a href="https://caminoreal.zaragozadinamica.org/repertorio/">Ver más →</a>
+          <a href="https://caminoreal.zaragozadinamica.org/repertorio/"><img
+              src="assets/img/Captura de pantalla 2026-03-16 214830.png" alt="Proyecto 2"></a>
+          <h3>Proyecto 2: Mariachis CaminoReal (Elaboracion del Repertorio)</h3>
+          <p>web para la promoción y organización de eventos musicales de mariachis, encargado de crear la pagina del
+            repertorio y administrar SEO, Optimizacion, Seguridad y backup de la web.</p>
+          <p><span>WordPress</span><span>Astra</span><span>Reservas</span></p>
+          <a href="https://caminoreal.zaragozadinamica.org/repertorio/">Echa un vistazo →</a>
         </div>
         <div class="projecto-card">
-          <img src="assets/img/Captura de pantalla 2026-03-16 215827.png" alt="Proyecto 3">
+          <a href="https://techprogramation.blog/"><img src="assets/img/Captura de pantalla 2026-03-16 215827.png"
+              alt="Proyecto 3"></a>
           <h3>Proyecto 3: Rediseño Pasteleria Fantoba (solitario)</h3>
           <p>Rediseño de la interfaz y experiencia del usuario para la plataforma Fantoba.</p>
-          <a href="https://techprogramation.blog/">Ver más →</a>
+          <p><span>WordPress</span><span>WooCommerce</span><span>Astra</span></p>
+          <a href="https://techprogramation.blog/">Echa un vistazo →</a>
         </div>
       </section>
 
       <section id="contacto">
         <h2>Contacto</h2>
-        <p>si tienes alguna pregunta ¡contáctanos!</p>
+        <p>si tienes alguna pregunta ¡contáctame!</p>
         <form id="contactForm" method="POST" action="send-contact.php" novalidate>
           <input type="text" name="name" placeholder="Tu nombre" required>
           <input type="email" name="email" placeholder="Tu correo electrónico" required>
@@ -151,93 +159,6 @@
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
-  <script>
-    const form = document.getElementById('contactForm');
-    const feedback = document.getElementById('contactFeedback');
-
-    function showFeedback(message, type = 'info') {
-      feedback.textContent = message;
-      feedback.style.color = type === 'error' ? '#ff6b6b' : type === 'success' ? '#7cffb2' : '#ffffff';
-    }
-
-    function validateForm(data) {
-      const errors = [];
-      const name = data.get('name').trim();
-      const email = data.get('email').trim();
-      const message = data.get('message').trim();
-
-      if (!name) errors.push('El nombre es obligatorio.');
-      if (!email) {
-        errors.push('El email es obligatorio.');
-      } else {
-        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!re.test(email)) errors.push('Ingresa un email válido.');
-      }
-      if (!message) errors.push('El mensaje no puede estar vacío.');
-
-      return errors;
-    }
-
-    form.addEventListener('submit', async (event) => {
-      event.preventDefault();
-      feedback.textContent = '';
-
-      const formData = new FormData(form);
-      const errors = validateForm(formData);
-      if (errors.length) {
-        showFeedback(errors.join(' '), 'error');
-        return;
-      }
-
-      const submitBtn = form.querySelector('button[type="submit"]');
-      submitBtn.disabled = true;
-      submitBtn.textContent = 'Enviando...';
-
-      try {
-        const resp = await fetch(form.action, {
-          method: 'POST',
-          body: formData,
-        });
-
-        const data = await resp.json();
-        if (resp.ok && data.success) {
-          showFeedback('¡Mensaje enviado correctamente!', 'success');
-          form.reset();
-        } else {
-          showFeedback(data.error || 'No se pudo enviar el mensaje.', 'error');
-        }
-      } catch (err) {
-        console.error('Fetch error:', err);
-        showFeedback('Error de conexión: ' + err.message, 'error');
-      } finally {
-        submitBtn.disabled = false;
-        submitBtn.textContent = 'Enviar';
-      }
-    });
-
-    // Scroll spy (change active link based on section in view)
-    const sections = document.querySelectorAll('section[id]');
-    const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
-
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          const id = entry.target.getAttribute('id');
-          const link = document.querySelector(`.navbar-nav .nav-link[href="#${id}"]`);
-          if (!link) return;
-
-          if (entry.isIntersecting) {
-            navLinks.forEach((l) => l.classList.remove('active'));
-            link.classList.add('active');
-          }
-        });
-      },
-      { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-    );
-
-    sections.forEach((section) => observer.observe(section));
-  </script>
-</body>
-
-</html>
+    crossorigin="anonymous"></script> 
+    </body>  
+    </html>
