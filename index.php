@@ -1,4 +1,5 @@
 <?php ?>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -101,8 +102,6 @@
             <li>Desarrollo de juegos</li>
             <li>Seguridad informática</li>
             <li>Base de datos</li>
-            <li>React</li>
-            <li>Angular</li>
             <li>React.js</li>
             <li>Angular.js</li>
             <li>Vue.js</li>
@@ -122,21 +121,21 @@
           <a href="">upsi error en base de datos</a>
         </div>
         <div class="projecto-card">
-          <a href="https://caminoreal.zaragozadinamica.org/repertorio/"><img
+          <a href="https://caminoreal.zaragozadinamica.org/repertorio/" target='_blank'><img
               src="assets/img/Captura de pantalla 2026-03-16 214830.png" alt="Proyecto 2"></a>
           <h3>Proyecto 2: Mariachis CaminoReal (Elaboracion del Repertorio)</h3>
           <p>web para la promoción y organización de eventos musicales de mariachis, encargado de crear la pagina del
             repertorio y administrar SEO, Optimizacion, Seguridad y backup de la web.</p>
           <p><span>WordPress</span><span>Astra</span><span>Reservas</span></p>
-          <a href="https://caminoreal.zaragozadinamica.org/repertorio/">Echa un vistazo →</a>
+          <a href="https://caminoreal.zaragozadinamica.org/repertorio/" target='_blank'>Echa un vistazo →</a>
         </div>
         <div class="projecto-card">
-          <a href="https://techprogramation.blog/"><img src="assets/img/Captura de pantalla 2026-03-16 215827.png"
+          <a href="https://techprogramation.blog/" target='_blank'><img src="assets/img/Captura de pantalla 2026-03-16 215827.png"
               alt="Proyecto 3"></a>
           <h3>Proyecto 3: Rediseño Pasteleria Fantoba (solitario)</h3>
           <p>Rediseño de la interfaz y experiencia del usuario para la plataforma Fantoba.</p>
           <p><span>WordPress</span><span>WooCommerce</span><span>Astra</span></p>
-          <a href="https://techprogramation.blog/">Echa un vistazo →</a>
+          <a href="https://techprogramation.blog/" target='_blank'>Echa un vistazo →</a>
         </div>
       </section>
 
@@ -160,5 +159,6 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
     crossorigin="anonymous"></script> 
+    <script src="Email.js"></script>
     </body>  
     </html>
